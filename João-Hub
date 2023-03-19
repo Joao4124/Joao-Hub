@@ -1,0 +1,51 @@
+local Window = Library.CreateLib("João hub", "DarkTheme")
+
+ --Principal
+local Tab = Window:NewTab("Principal")
+local Section = Tab:NewSection("Principal")
+
+Section:NewButton("Back/Front Flip", "faz você fazer ginastica", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/7wDcPtLk'))()
+print("Clicked")
+end)
+
+Section:NewToggle("Corridinha de jogador", "correr muito", function(state)
+    if state then
+          game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+        else
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+        end
+    end)
+Section:NewButton("Infinite Yield", "FE Admin Commands", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+ -- Player Local
+ local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+
+    PlayerSection:NewSlider("Velocidade", "Tamanho da velocidade", 500, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+PlayerSection:NewSlider("Poder do pulo", "Tamanho do Pulo", 350, 50, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+
+    PlayerSection:NewButton("Resetar Vel/Pulo", "Resets to all defaults", function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    end)
+
+Section:NewButton("Chat Spoofer", "Cria uma conta imaginaria para falar no chat", function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/djBfk8Li'),true))()
+    end)
+Section:NewButton("Voar", "Modo passaro", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))() 
+
+        Fly(true)
+    end)
+
+
+
